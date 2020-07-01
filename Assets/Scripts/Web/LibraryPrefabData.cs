@@ -13,7 +13,7 @@ public class LibraryPrefabData : MonoBehaviour
 {
     public LibraryListData libraryListData;
     public InfoWidget infoWidget;
-
+    
     //public TextMeshProUGUI title;
     //public TextMeshProUGUI downQuantityText;
     //public RawImage downQuantityImage; 
@@ -46,6 +46,7 @@ public class LibraryPrefabData : MonoBehaviour
         }
 
         infoWidget.data = libraryListData;
+        infoWidget.closeBtn.SetActive(!infoWidget.closeBtn.activeInHierarchy);
         infoWidget.gameObject.SetActive(!infoWidget.gameObject.activeInHierarchy);
         infoWidget.FillData();
     }

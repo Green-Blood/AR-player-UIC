@@ -98,7 +98,9 @@ namespace Web
         }
         fillData();
     }
-
+    
+    
+    
     public void fillData()
     {
         for(int i=0;i< savedData.libraryInfoData.Count;i++)
@@ -115,10 +117,13 @@ namespace Web
             //     fillImage();
             // }
             
-            prefabData.transform.GetChild(0). GetChild(1).GetComponent<TextMeshProUGUI>().text = prefabData.libraryListData.libraryInfoData.caption_text;
+            prefabData.transform.GetChild(0).GetChild(1).GetComponent<TextMeshProUGUI>().text = prefabData.libraryListData.libraryInfoData.caption_text;
             prefabData.transform.GetChild(0).GetChild(3).GetComponent<TextMeshProUGUI>().text = prefabData.libraryListData.libraryInfoData.views.ToString();
+            
 
             Instantiate(prefabData, parent.transform).infoWidget=infoWidget;
+            //fillImage();
+            
  
         }
     }
@@ -134,7 +139,7 @@ namespace Web
     public void fillImage()
     {
         Texture2D tmp = LoadPNG(prefabData.libraryListData.libraryInfoData.icon_path);
-        prefabData.transform.GetChild(0).GetComponent<Image>().sprite = Sprite.Create(tmp,new Rect(0,0,tmp.width,tmp.height), Vector2.one/2.0f );
+        prefabData.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = Sprite.Create(tmp,new Rect(0,0,tmp.width,tmp.height), Vector2.one/2.0f );
 
     }
 

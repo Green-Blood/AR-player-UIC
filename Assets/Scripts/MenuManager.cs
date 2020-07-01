@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
 {
 
     public GameObject thePanel;
+    public GameObject closeBtn;
     public void PlayGame()
     {
         SceneManager.LoadScene("GameScene");
@@ -20,5 +21,7 @@ public class MenuManager : MonoBehaviour
     public void GoBack()
     {
         thePanel.SetActive(!thePanel.activeInHierarchy);
+        closeBtn.SetActive(!closeBtn.activeInHierarchy);
+        
     }
 }

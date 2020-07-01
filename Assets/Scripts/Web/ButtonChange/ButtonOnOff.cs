@@ -13,6 +13,8 @@ namespace ButtonChange
         
         public Sprite downButtonOn;
         public Sprite downButtonOff;
+
+        public GameObject closeBtn;
         
         bool _isClicked = false;
 
@@ -29,7 +31,7 @@ namespace ButtonChange
         {
             _isClicked = !_isClicked;
             downButton.image.overrideSprite = _isClicked ? downButtonOn : downButtonOff;
-               
+            closeBtn.SetActive(!closeBtn.activeInHierarchy);
             var theAnimator = thePanel.GetComponent<Animator>();
             if (theAnimator == null) return;
             var isOpen = theAnimator.GetBool(IsOpen);

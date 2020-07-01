@@ -15,6 +15,7 @@ public class InfoWidget : MonoBehaviour
     public TMP_Text downladerCount;
     public TMP_Text description;
     public GameObject playBtn, downloadBtn;
+    public GameObject closeBtn;
     public void FillData()
     {
         title.text = data.libraryFullInfoData.caption_text;
