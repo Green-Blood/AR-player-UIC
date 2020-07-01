@@ -33,6 +33,16 @@ public class InfoWidget : MonoBehaviour
     public void downloadImageAndVideo()
     {
         WebController.clientApp.downloadImageAndVideoData(data.libraryFullInfoData.id, ImageRecognition.imageRecognition.addImageToTracking);
+        
+        if (downloadBtn.GetComponent<Animation>().isPlaying)
+        {
+            
+            downloadBtn.GetComponent<Animation>().Stop();
+        }
+        else
+        {
+            downloadBtn.GetComponent<Animation>().Play("CloudAnim");
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -48,6 +58,7 @@ public class InfoWidget : MonoBehaviour
     void OnEnable()
     {
         playBtn.SetActive(false);
+        
         downloadBtn.SetActive(true);
     }    // Update is called once per frame
     void Update()

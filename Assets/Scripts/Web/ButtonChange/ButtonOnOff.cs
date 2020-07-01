@@ -13,10 +13,8 @@ namespace ButtonChange
         
         public Sprite downButtonOn;
         public Sprite downButtonOff;
-        public Sprite playButtonOn;
-        public Sprite playButtonOff;
         
-        public bool _isClicked = false;
+        bool _isClicked = false;
 
         public GameObject thePanel;
         private static readonly int IsOpen = Animator.StringToHash("isOpen");
@@ -29,19 +27,8 @@ namespace ButtonChange
 
         public void ChangeButton()
         {
-            
-
             _isClicked = !_isClicked;
-            if(_isClicked)
-            {
-                downButton.image.overrideSprite = downButtonOn;
-                playButton.image.overrideSprite = playButtonOff;
-            }
-            else
-            {
-                downButton.image.overrideSprite = downButtonOff;
-                playButton.image.overrideSprite = playButtonOn;
-            }
+            downButton.image.overrideSprite = _isClicked ? downButtonOn : downButtonOff;
                
             var theAnimator = thePanel.GetComponent<Animator>();
             if (theAnimator == null) return;
